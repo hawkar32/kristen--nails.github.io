@@ -1,3 +1,8 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 .open-sans {
   font-family: "Open Sans", sans-serif;
   
@@ -10,7 +15,10 @@ body {
     margin: 0
 }
 .container {
-    margin: 8px 166px
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 .header {
     background:url(bd1.png)
@@ -26,10 +34,12 @@ body {
     display: block
 }
 .header{
+    font-family: "Open Sans", sans-serif;
     padding-top: 50px
         
 }
 .header-line{
+    font-family: "Open Sans", sans-serif;
     display: flex
 }
 .header-line{
@@ -39,38 +49,45 @@ body {
     color: rgb(255, 255, 255);
 }
 .nav-item{
+    font-family: "Open Sans", sans-serif;
     color:rgb(255, 220, 196);
     justify-content: space-around;
     transition: color 0.4s linear;
 }
 .nav-item{
+    font-family: "Open Sans", sans-serif;
     text-decoration: none;
     font-weight: 700;
     font-size: 55px;
     margin-right: 25px
 }
 .nav-item{
+    font-family: "Open Sans", sans-serif;
     color:rgb(255, 220, 196);
     text-decoration: none;
 }
 .nav-item{
+    font-family: "Open Sans", sans-serif;
     text-decoration: none;
     font-weight: 700;
    
     margin-right: 25px
 }
 .avv{
+    font-family: "Open Sans", sans-serif;
     border-left: 5px solid rgb(255, 220, 196);
     padding-left: 10px;
-    height: 100px;
+    height: 250px;
         text-decoration: none;
 }
 .avv-vva{
+    font-family: "Open Sans", sans-serif;
     display: flex;
     align-items: center;
     text-decoration: none;
 }
 .header-title{
+    font-family: "Open Sans", sans-serif;
     color: rgb(255, 220, 196);
         font-size: 50px;
     text-align: center;
@@ -80,6 +97,7 @@ body {
     transition: color 0.4s linear;
 }
 .header-down{
+    font-family: "Open Sans", sans-serif;
     position: relative;
 }
 .header-title:hover{
@@ -104,7 +122,10 @@ margin-left: 1000px
     
     
 }
-
+.fo{
+    margin-top: -250px;
+    margin-left: 270px
+}
 .prr-img{
     position: absolute;
 }
@@ -142,4 +163,67 @@ margin-left: 10px;
 }
 .header-l:hover{
     color: rgb(255, 255, 255)
+}
+@media (max-width: 1100px){
+    .prr-img {
+        display: none;
+        margin-left: 1px;
+    }
+    .nails-text {
+        margin-left: 1px;
+    }
+    .kn{
+        margin-top: 500px;
+        margin-left: -350px;
+    }
+    .avv{
+        margin-top: 1000px;
+        margin-left: -755px;
+    }
+    .header-line{
+        margin-top: -450px
+    }
+}
+@media (max-width: 768px) {
+
+  .burger {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(15px);
+
+    flex-direction: column;
+    padding-top: 100px;
+
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  .nav.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .nav-item {
+    padding: 20px;
+    font-size: 18px;
+    display: block;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+}
+body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
