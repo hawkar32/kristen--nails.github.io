@@ -1,4 +1,3 @@
-
 .open-sans {
   font-family: "Open Sans", sans-serif;
   
@@ -14,7 +13,7 @@ body {
     margin: 8px 166px
 }
 .header {
-    background:url(bg.png)
+    background:url(bd1.png)
     
 }
 .header {
@@ -108,4 +107,39 @@ margin-left: 1000px
 
 .prr-img{
     position: absolute;
+}
+.prof-text{
+    font-family: "Open Sans", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+margin-left: 100px;
+    color: rgb(255, 220, 196)
+    
+    
+}
+.header-down-text{
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+margin-left: 10px;
+    color: rgb(255, 220, 196)
+}
+.na{
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+margin-left: 10px;
+    color: rgb(255, 220, 196)
+}
+.header-l:hover{
+    color: rgb(255, 255, 255)
 }
