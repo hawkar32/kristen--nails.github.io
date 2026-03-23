@@ -11,6 +11,13 @@ html, body {
   font-variation-settings:
     "wdth" 100;
 }
+.header-line{
+    margin-left: -500px
+}
+.nav-item{
+    margin-left: 1px;
+    margin-right: 500px;
+}
 body {
     margin: 0
 }
@@ -21,7 +28,10 @@ body {
   box-sizing: border-box;
 }
 .header {
-    background:url(bd1.png)
+    background:url(bd1.png);
+}
+.avv{
+    margin-left: 700px;
     
 }
 .header {
@@ -181,7 +191,8 @@ margin-left: 10px;
         margin-left: -755px;
     }
     .header-line{
-        margin-top: -450px
+        margin-top: -450px;
+        margin-left: 25px;
     }
 }
 @media (max-width: 768px) {
