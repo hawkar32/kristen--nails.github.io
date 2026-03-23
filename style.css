@@ -188,7 +188,28 @@ margin-left: 10px;
     }
     .avv{
         margin-top: 1000px;
-        margin-left: -755px;
+        margin-left: -px;
+    }
+    .header-line{
+        margin-top: -450px;
+        margin-left: 25px;
+    }
+}
+@media (max-width: 1965px){
+    .prr-img {
+        display: none;
+        margin-left: 1px;
+    }
+    .nails-text {
+        margin-left: 1px;
+    }
+    .kn{
+        margin-top: 500px;
+        margin-left: -350px;
+    }
+    .avv{
+        margin-top: 1000px;
+        margin-left: -855px;
     }
     .header-line{
         margin-top: -450px;
