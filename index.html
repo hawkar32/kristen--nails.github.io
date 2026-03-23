@@ -20,16 +20,20 @@
                    <img src="logo2.png" alt="" width="350">
             </div>
             <div class='naf'>
+                <div class='kn'>
                     <a class="nav-item" href="index.html">ГЛАВНАЯ</a>
                     <a class="nav-item" href="reviews.html">ОТЗЫВЫ</a>
                     <a class="nav-item" href="contacts.html">КОНТАКТЫ</a>
+                </div>
              </div>
             <div class='avv'>
                 <div class='avv-vva'></div>
                     <div class='ava'>
-                    <img src="QUYwbh_BqL1K_wieICCinZKc6tBYNd3RIi4gTvfKGK7SWs1xB9AqGP8sX1YcVh6VlB4GwgbgYgaNSH38DUnSvkaX.jpg" alt="" width="100">
+                    <img src="QUYwbh_BqL1K_wieICCinZKc6tBYNd3RIi4gTvfKGK7SWs1xB9AqGP8sX1YcVh6VlB4GwgbgYgaNSH38DUnSvkaX.jpg" alt="" width="250">
+                        <div class='fo'>
                         <a   Class='nav-item' href="prof.html">Самсонова Кристирна Андреевна</a>
-"
+                        </div>
+                            <div class="burger" onclick="toggleMenu()">☰</div>
                 </div>
                 </div>
             </div>
@@ -43,6 +47,7 @@
         </div>    
         
         </div>
+        <div class="overlay" onclick="closeMenu()"></div>
     
         
         <div class='pr'>
@@ -71,4 +76,25 @@
             </div>    
     </body>
 </html>
- 
+ <script>
+function toggleMenu() {
+  document.querySelector(".nav").classList.toggle("active");
+  document.querySelector(".overlay").classList.toggle("active");
+  document.body.classList.toggle("menu-open");
+}
+
+function closeMenu() {
+  document.querySelector(".nav").classList.remove("active");
+  document.querySelector(".overlay").classList.remove("active");
+  document.body.classList.remove("menu-open");
+}
+
+/* Подсветка активной страницы */
+const links = document.querySelectorAll(".nav-item");
+
+links.forEach(link => {
+  if (link.href === window.location.href) {
+    link.classList.add("active");
+  }
+});
+</script>
