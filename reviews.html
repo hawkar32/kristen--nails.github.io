@@ -1,52 +1,223 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Отзывы</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<meta charset="UTF-8">
+<title>Отзывы</title>
 
+<style>
+body {
+  background: #0b0b0b;
+  color: white;
+  font-family: sans-serif;
+}
+
+.review-section {
+  max-width: 650px;
+  margin: 60px auto;
+  padding: 25px;
+  background: rgba(10,10,10,0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+}
+
+button {
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  background: #222;
+  color: white;
+  cursor: pointer;
+}
+
+.stars span {
+  font-size: 26px;
+  cursor: pointer;
+  color: #333;
+}
+
+.stars .active {
+  color: gold;
+}
+
+.review {
+  margin-top: 15px;
+  padding: 15px;
+  background: #111;
+  border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
 <div class="header">
   <div class="container">
-    <div class="header-line">
+    <div class="header-l">
 
       <div class="header-logo">
         <img src="logo2.png" width="150">
       </div>
 
-      <div class="nav">
-        <a class="nav-item" href="index.html">ГЛАВНАЯ</a>
-        <a class="nav-item" href="reviews.html">ОТЗЫВЫ</a>
-        <a class="nav-item" href="contacts.html">КОНТАКТЫ</a>
+    
+        <div class='avv'>
+                <div class='avv-vva'></div>
+                    
+                </div>
+
+        </div>
+        
       </div>
-
     </div>
+<div class="review-section">
+  <h2>Отзывы</h2>
+
+  <button onclick="login()">Войти через Google</button>
+  <button onclick="logout()">Выйти</button>
+
+  <p id="user"></p>
+
+  <div id="avgValue">0.0</div>
+  <div id="avgStars">☆☆☆☆☆</div>
+
+  <textarea id="text" placeholder="Отзыв"></textarea>
+
+  <div class="stars" id="stars">
+    <span onclick="setRating(1)">★</span>
+    <span onclick="setRating(2)">★</span>
+    <span onclick="setRating(3)">★</span>
+    <span onclick="setRating(4)">★</span>
+    <span onclick="setRating(5)">★</span>
   </div>
+
+  <button onclick="addReview()">Оставить отзыв</button>
+
+  <div id="reviews"></div>
 </div>
 
-<div class="reviews">
-  <div class="container">
-    <span>- Анна</span>
-    <h1>Отзывы клиентов</h1>
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
 
-    <div class="review">
-      <p>Очень понравился маникюр! Всё аккуратно и красиво 💅</p>
-        <span>- Маша</span>
-    </div>
+<script>
+const firebaseConfig = {
+  apiKey: "ТВОЙ_API_KEY",
+  authDomain: "ТВОЙ_AUTH_DOMAIN",
+  projectId: "ТВОЙ_PROJECT_ID"
+};
 
-    <div class="review">
-      <p>Отличный сервис и приятная атмосфера!</p>
-      <span>- Лиза</span>
-    </div>
+firebase.initializeApp(firebaseConfig);
 
-    <div class="review">
-      <p>Буду приходить ещё, спасибо мастеру!</p>
-      <span>- Анна</span>
-    </div>
+const db = firebase.firestore();
+const auth = firebase.auth();
 
-  </div>
-</div>
+let user = null;
+let rating = 0;
 
+// 🔐 авторизация
+function login() {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  auth.signInWithPopup(provider);
+}
+
+function logout() {
+  auth.signOut();
+}
+
+auth.onAuthStateChanged(u => {
+  user = u;
+  document.getElementById("user").innerText =
+    u ? "Ты: " + u.displayName : "Не авторизован";
+});
+
+// ⭐ рейтинг
+function setRating(r) {
+  rating = r;
+  document.querySelectorAll("#stars span").forEach((s, i) => {
+    s.classList.toggle("active", i < r);
+  });
+}
+
+// ➕ добавить отзыв
+async function addReview() {
+  if (!user) {
+    alert("Войди через Google");
+    return;
+  }
+
+  const text = document.getElementById("text").value;
+
+  if (!text || rating === 0) {
+    alert("Заполни всё");
+    return;
+  }
+
+  await db.collection("reviews").add({
+    uid: user.uid,
+    name: user.displayName,
+    text,
+    rating,
+    date: new Date()
+  });
+
+  document.getElementById("text").value = "";
+  rating = 0;
+
+  loadReviews();
+}
+
+// ❌ удалить отзыв
+async function deleteReview(id, uid) {
+  if (!user || user.uid !== uid) return;
+
+  await db.collection("reviews").doc(id).delete();
+  loadReviews();
+}
+
+// 📥 загрузка отзывов
+async function loadReviews() {
+  const snapshot = await db.collection("reviews")
+    .orderBy("date", "desc")
+    .get();
+
+  const container = document.getElementById("reviews");
+  container.innerHTML = "";
+
+  let total = 0;
+  let count = 0;
+
+  snapshot.forEach(doc => {
+    const r = doc.data();
+
+    total += r.rating;
+    count++;
+
+    const stars = "★".repeat(r.rating) + "☆".repeat(5 - r.rating);
+
+    container.innerHTML += `
+      <div class="review">
+        <b>${r.name}</b>
+
+        ${stars}
+
+        ${r.text}
+
+        ${
+          user && user.uid === r.uid
+            ? `<button onclick="deleteReview('${doc.id}','${r.uid}')">Удалить</button>`
+            : ""
+        }
+      </div>
+    `;
+  });
+
+  const avg = count ? (total / count).toFixed(1) : 0;
+
+  document.getElementById("avgValue").innerText = avg;
+  document.getElementById("avgStars").innerText =
+    "★".repeat(Math.round(avg)) + "☆".repeat(5 - Math.round(avg));
+}
+
+loadReviews();
+</script>
 </body>
 </html>
