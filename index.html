@@ -1,100 +1,911 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel='stylesheet' href='style.css'>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Маникюр в Санкт-Петербурге. Маникюр с покрытием, наращивание, дизайн ногтей.">
+
+    <title>Маникюр — Санкт-Петербург</title>
+
+    <link rel="stylesheet" href="style.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap" rel="stylesheet">
-    <title>Kristen-nails</title>    
-    </head>
-    <body>
-        
-    <div class='header'>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="container">
+
+        <div class="header-main">
+
+            <!-- ЛОГОТИП -->
+            <a href="index.html" class="logo">
+                <img src="logo2.png" alt="Логотип">
+            </a>
+
+            <!-- НАВИГАЦИЯ -->
+            <nav class="nav">
+                <a href="index.html">Главная</a>
+                <a href="prof.html">О мастере</a>
+                <a href="contacts.html">Контакты</a>
+            </nav>
+
+            <!-- СОЦСЕТИ -->
+            <div class="socials">
+                <a href="https://t.me/knailss" target="_blank">☏</a>
+            </div>
+
+            <!-- BURGER -->
+            <button class="burger" id="burger" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+
+        <!-- МОБИЛЬНОЕ МЕНЮ -->
+        <nav class="mobile-nav" id="mobileNav">
+
+            <a href="index.html">Главная</a>
+            <a href="prof.html">О мастере</a>
+            <a href="contacts.html">Контакты</a>
+
+            <a href="https://t.me/knailss" target="_blank">
+                Записаться
+            </a>
+
+        </nav>
+
+
+        <!-- ПОИСК И КАТАЛОГ -->
+        <div class="tools">
+
+            <button class="catalog-button" id="catalogButton">
+                <span class="catalog-lines">☰</span>
+                Каталог услуг
+            </button>
+
+            <div class="search-box">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Найти услугу..."
+                    autocomplete="off"
+                >
+
+                <button id="clearSearch" type="button">
+                    ×
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ВЫПАДАЮЩИЙ КАТАЛОГ -->
+        <div class="catalog" id="catalog">
+
+            <div class="catalog-side">
+
+                <div class="catalog-side-title">
+                    Категории
+                </div>
+
+                <button class="category active" data-category="all">
+                    Все услуги
+                </button>
+
+                <button class="category" data-category="manicure">
+                    Маникюр
+                </button>
+
+                <button class="category" data-category="extension">
+                    Наращивание
+                </button>
+
+                <button class="category" data-category="design">
+                    Дизайн
+                </button>
+
+            </div>
+
+
+            <div class="catalog-content">
+
+                <div class="catalog-top">
+
+                    <div>
+                        <span>УСЛУГИ</span>
+                        <h2>Маникюр</h2>
+                    </div>
+
+                    <button id="catalogClose">
+                        ×
+                    </button>
+
+                </div>
+
+
+                <div class="services">
+
+
+                    <!-- МАНИКЮР -->
+
+                    <div class="service-group" data-group="manicure">
+
+                        <h3>Маникюр</h3>
+
+                        <button class="service">
+                            <span>Японский маникюр</span>
+                            <b>1100 ₽</b>
+                        </button>
+
+                        <button class="service">
+                            <span>Мужской маникюр</span>
+                            <b>1000 ₽</b>
+                        </button>
+
+                        <button class="service">
+                            <span>Маникюр с покрытием</span>
+                            <b>1500 ₽</b>
+                        </button>
+
+                        <button class="service">
+                            <span>Снятие без покрытия</span>
+                            <b>300 ₽</b>
+                        </button>
+
+                    </div>
+
+
+                    <!-- НАРАЩИВАНИЕ -->
+
+                    <div class="service-group" data-group="extension">
+
+                        <h3>Наращивание</h3>
+
+                        <button class="service">
+                            <span>Наращивание до 3 ногтей</span>
+                            <b>2000 ₽</b>
+                        </button>
+
+                        <button class="service">
+                            <span>Наращивание до 6 ногтей</span>
+                            <b>2300 ₽</b>
+                        </button>
+
+                        <button class="service">
+                            <span>Наращивание до 9 ногтей</span>
+                            <b>2600 ₽</b>
+                        </button>
+
+                    </div>
+
+
+                    <!-- ДИЗАЙН -->
+
+                    <div class="service-group" data-group="design">
+
+                        <h3>Дизайн</h3>
+
+                        <button class="service">
+                            <span>Лёгкий дизайн</span>
+                            <b>100 ₽</b>
+                        </button>
+
+                        <button class="service">
+                            <span>Френч</span>
+                            <b>200 ₽</b>
+                        </button>
+
+                        <button class="service">
+                            <span>Сложный дизайн — 1 ноготь</span>
+                            <b>50 ₽</b>
+                        </button>
+
+                        <button class="service">
+                            <span>Сложный дизайн — 10 ногтей</span>
+                            <b>400 ₽</b>
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="empty" id="emptySearch">
+                    Ничего не найдено
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     ОСНОВНОЙ БЛОК
+===================================================== -->
+
+<main>
+
+
+    <section class="intro">
+
         <div class="container">
-            <div class='header-line'>
-               <div class='header-logo'>
-                   <img src="logo2.png" alt="" width="350">
+
+            <div class="breadcrumbs">
+                Главная&nbsp;&nbsp; / &nbsp;&nbsp;Маникюр
             </div>
-            <div class='naf'>
-                <div class='kn'>
-                    <a class="nav-item" href="index.html">ГЛАВНАЯ</a>
-                    <a class="nav-item" href="https://t.me/reviews_kristen_nails">ОТЗЫВЫ</a>
-                    <a class="nav-item" href="contacts.html">КОНТАКТЫ</a>
+
+
+            <div class="intro-grid">
+
+
+                <div class="intro-copy">
+
+                    <span class="eyebrow">
+                        МАНИКЮР • САНКТ-ПЕТЕРБУРГ
+                    </span>
+
+                    <h1>
+                        Красивые<br>
+                        <em>ногти</em> —<br>
+                        с заботой
+                    </h1>
+
+                    <p>
+                        Маникюр, покрытие и дизайн ногтей
+                        в уютной атмосфере. Индивидуальный
+                        подход к каждой клиентке.
+                    </p>
+
+
+                    <div class="intro-actions">
+
+                        <a
+                            href="https://t.me/knailss"
+                            target="_blank"
+                            class="primary-button"
+                        >
+                            Записаться на маникюр
+                        </a>
+
+                        <a
+                            href="#prices"
+                            class="text-button"
+                        >
+                            Смотреть цены →
+                        </a>
+
+                    </div>
+
                 </div>
-             </div>
-            <div class='avv'>
-                <div class='avv-vva'></div>
-                    <div class='ava'>
-                    <img src="QUYwbh_BqL1K_wieICCinZKc6tBYNd3RIi4gTvfKGK7SWs1xB9AqGP8sX1YcVh6VlB4GwgbgYgaNSH38DUnSvkaX.jpg" alt="" width="250">
-                        <div class='fo'>
-                        <a   Class='nav-item' href="prof.html">Самсонова Кристина Андреевна</a>
-                        </div>
-                        <div class="burger" onclick="toggleMenu()">☰</div>
+
+
+                <div class="intro-card">
+
+                    <div class="round-mark">
+                        ♡
+                    </div>
+
+                    <span>
+                        СТОИМОСТЬ
+                    </span>
+
+                    <strong>
+                        от 1000 ₽
+                    </strong>
+
+                    <p>
+                        Актуальные цены
+                        и услуги мастера
+                    </p>
+
                 </div>
-                </div>
+
+
             </div>
-        <div class='header-down'>
-            
-            <div class='header-titl'>
-                <a class='header-title' href='https://vk.com/kriss0070'>Записаться на маникюр</a> 
-                </div>
-            
-            </div>
-        </div>    
-        
+
         </div>
-        <div class="overlay" onclick="closeMenu()"></div>
-    
-        
-        <div class='pr'>
-                <div class='pr-title'>
-                     Прайс-лист💸
-                </div>
+
+    </section>
+
+
+    <!-- =================================================
+         ПРЕИМУЩЕСТВА
+    ================================================== -->
+
+    <section class="advantages">
+
+        <div class="container">
+
+            <div class="advantages-grid">
+
+
+                <article>
+
+                    <span class="adv-number">01</span>
+
+                    <div class="adv-icon">✧</div>
+
+                    <h2>
+                        Стерильность
+                    </h2>
+
+                    <p>
+                        Стерильное оборудование
+                        и инструменты. Все методы
+                        стерилизации и дезинфекции
+                        соблюдаются регулярно.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <span class="adv-number">02</span>
+
+                    <div class="adv-icon">♡</div>
+
+                    <h2>
+                        Забота
+                    </h2>
+
+                    <p>
+                        Внимательное отношение
+                        к пожеланиям каждой клиентки
+                        и комфортная атмосфера.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <span class="adv-number">03</span>
+
+                    <div class="adv-icon">◌</div>
+
+                    <h2>
+                        Покрытие
+                    </h2>
+
+                    <p>
+                        Долговременное покрытие
+                        с нанесением гель-лака
+                        под кутикулу.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <span class="adv-number">04</span>
+
+                    <div class="adv-icon">✦</div>
+
+                    <h2>
+                        Уют
+                    </h2>
+
+                    <p>
+                        Чай, кофе, вкусняшки,
+                        фильмы и приятная атмосфера
+                        во время процедуры.
+                    </p>
+
+                </article>
+
+
+            </div>
+
         </div>
-                <div class='prr'>
-                    <div class='prr-img'>
-                        <img src="pr1.jpg" class='ng'>
-                    </div>
-                    </div>
-            <div class='nails'>
-                <div class='nails-item'>
-                    <div class='nails-text'>
-                        Японский маникюр - 1100₽ <br> Мужской маникюр - 1000₽ <br> Маникюр с покрытием (гель-лак) - 1500₽ <br> Лёгкий дизайн - 100₽ <br> Френч - 200₽ <br> Сложный дизайн (1 ноготь) - 50₽ <br> Наращивание (до 3) - 2000₽ <br> Наращивание (до 6) - 2300₽ <br> Наращивание (до 9) - 2600₽ <br> Снятие без дальнейшего покрытия - 300₽ <br> Сложный дизайн (10 ногтей) - 400₽
-                    </div>
-                </div>
-            <div class='nails'>
-                <div class='nails-item'>
-                    <div class='nails-text'>
-                          
-                    </div>
-                </div>
-                </div>
-            </div>    
-    </body>
-</html>
- <script>
-function toggleMenu() {
-  document.querySelector(".nav").classList.toggle("active");
-  document.querySelector(".overlay").classList.toggle("active");
-  document.body.classList.toggle("menu-open");
-}
 
-function closeMenu() {
-  document.querySelector(".nav").classList.remove("active");
-  document.querySelector(".overlay").classList.remove("active");
-  document.body.classList.remove("menu-open");
-}
+    </section>
 
-/* Подсветка активной страницы */
-const links = document.querySelectorAll(".nav-item");
 
-links.forEach(link => {
-  if (link.href === window.location.href) {
-    link.classList.add("active");
-  }
+    <!-- =================================================
+         БЫСТРОЕ МЕНЮ
+    ================================================== -->
+
+    <div class="quick-menu">
+
+        <div class="container">
+
+            <a href="#prices">
+                Цены
+            </a>
+
+            <a href="prof.html">
+                О мастере
+            </a>
+
+            <a href="contacts.html">
+                Адрес
+            </a>
+
+            <a href="https://t.me/knailss" target="_blank">
+                Запись
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         ЦЕНЫ
+    ================================================== -->
+
+    <section class="prices" id="prices">
+
+        <div class="container">
+
+            <div class="heading-row">
+
+                <div>
+
+                    <span class="section-label">
+                        ПРАЙС-ЛИСТ
+                    </span>
+
+                    <h2>
+                        Цены
+                    </h2>
+
+                </div>
+
+                <span class="price-note">
+                    Стоимость указана в рублях
+                </span>
+
+            </div>
+
+
+            <div class="price-grid">
+
+
+                <div class="price-card">
+
+                    <div>
+                        <span>01</span>
+                        <h3>Японский маникюр</h3>
+                    </div>
+
+                    <strong>1100 ₽</strong>
+
+                </div>
+
+
+                <div class="price-card">
+
+                    <div>
+                        <span>02</span>
+                        <h3>Мужской маникюр</h3>
+                    </div>
+
+                    <strong>1000 ₽</strong>
+
+                </div>
+
+
+                <div class="price-card">
+
+                    <div>
+                        <span>03</span>
+                        <h3>Маникюр с покрытием</h3>
+                    </div>
+
+                    <strong>1500 ₽</strong>
+
+                </div>
+
+
+                <div class="price-card">
+
+                    <div>
+                        <span>04</span>
+                        <h3>Лёгкий дизайн</h3>
+                    </div>
+
+                    <strong>100 ₽</strong>
+
+                </div>
+
+
+                <div class="price-card">
+
+                    <div>
+                        <span>05</span>
+                        <h3>Френч</h3>
+                    </div>
+
+                    <strong>200 ₽</strong>
+
+                </div>
+
+
+                <div class="price-card">
+
+                    <div>
+                        <span>06</span>
+                        <h3>Сложный дизайн — 1 ноготь</h3>
+                    </div>
+
+                    <strong>50 ₽</strong>
+
+                </div>
+
+
+                <div class="price-card">
+
+                    <div>
+                        <span>07</span>
+                        <h3>Наращивание до 3 ногтей</h3>
+                    </div>
+
+                    <strong>2000 ₽</strong>
+
+                </div>
+
+
+                <div class="price-card">
+
+                    <div>
+                        <span>08</span>
+                        <h3>Наращивание до 6 ногтей</h3>
+                    </div>
+
+                    <strong>2300 ₽</strong>
+
+                </div>
+
+
+                <div class="price-card">
+
+                    <div>
+                        <span>09</span>
+                        <h3>Наращивание до 9 ногтей</h3>
+                    </div>
+
+                    <strong>2600 ₽</strong>
+
+                </div>
+
+
+                <div class="price-card">
+
+                    <div>
+                        <span>10</span>
+                        <h3>Снятие без покрытия</h3>
+                    </div>
+
+                    <strong>300 ₽</strong>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         АДРЕС
+    ================================================== -->
+
+    <section class="address-banner">
+
+        <div class="container">
+
+            <div class="address-inner">
+
+                <div class="address-symbol">
+                    ⌖
+                </div>
+
+                <div>
+
+                    <span class="section-label">
+                        МЫ НАХОДИМСЯ
+                    </span>
+
+                    <h2>
+                        Санкт-Петербург
+                    </h2>
+
+                    <p>
+                        ул. Малая Бухарестская, 10к1
+                    </p>
+
+                </div>
+
+                <a href="contacts.html">
+                    Посмотреть адрес →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         КОНСУЛЬТАЦИЯ
+    ================================================== -->
+
+    <section class="consultation">
+
+        <div class="container">
+
+            <div class="consultation-inner">
+
+                <div>
+
+                    <span class="section-label">
+                        ЗАПИСЬ
+                    </span>
+
+                    <h2>
+                        Бесплатная консультация
+                    </h2>
+
+                    <p>
+                        Напишите мне в Telegram,
+                        чтобы подобрать удобное время.
+                    </p>
+
+                </div>
+
+                <a
+                    href="https://t.me/knailss"
+                    target="_blank"
+                >
+                    Написать в Telegram
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         МАСТЕР
+    ================================================== -->
+
+    <section class="master">
+
+        <div class="container">
+
+            <div class="master-inner">
+
+                <img
+                    src="QUYwbh_BqL1K_wieICCinZKc6tBYNd3RIi4gTvfKGK7SWs1xB9AqGP8sX1YcVh6VlB4GwgbgYgaNSH38DUnSvkaX.jpg"
+                    alt="Кристина — мастер маникюра"
+                >
+
+
+                <div class="master-info">
+
+                    <span class="section-label">
+                        О МАСТЕРЕ
+                    </span>
+
+                    <h2>
+                        Самсонова
+                        Кристина
+                        Андреевна
+                    </h2>
+
+                    <p>
+                        Мастер маникюра из Санкт-Петербурга.
+                        Индивидуальный подход, уютная атмосфера
+                        и любовь к своему делу.
+                    </p>
+
+                    <a href="prof.html">
+                        Подробнее обо мне →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <span>
+            © 2026 Маникюр Санкт-Петербург
+        </span>
+
+        <a href="contacts.html">
+            Контакты
+        </a>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+const catalogButton = document.getElementById("catalogButton");
+const catalog = document.getElementById("catalog");
+const catalogClose = document.getElementById("catalogClose");
+
+const searchInput = document.getElementById("searchInput");
+const clearSearch = document.getElementById("clearSearch");
+const emptySearch = document.getElementById("emptySearch");
+
+const categories = document.querySelectorAll(".category");
+const serviceGroups = document.querySelectorAll(".service-group");
+const services = document.querySelectorAll(".service");
+
+const burger = document.getElementById("burger");
+const mobileNav = document.getElementById("mobileNav");
+
+
+/* КАТАЛОГ */
+
+catalogButton.addEventListener("click", function () {
+    catalog.classList.toggle("open");
 });
+
+
+catalogClose.addEventListener("click", function () {
+    catalog.classList.remove("open");
+});
+
+
+/* КАТЕГОРИИ */
+
+categories.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+        categories.forEach(function (item) {
+            item.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        const category = button.dataset.category;
+
+        serviceGroups.forEach(function (group) {
+
+            if (category === "all") {
+                group.style.display = "";
+            } else {
+                group.style.display =
+                    group.dataset.group === category
+                        ? ""
+                        : "none";
+            }
+
+        });
+
+    });
+
+});
+
+
+/* ПОИСК */
+
+searchInput.addEventListener("input", function () {
+
+    const value = searchInput.value.toLowerCase().trim();
+
+    let found = 0;
+
+    services.forEach(function (service) {
+
+        const text = service.innerText.toLowerCase();
+
+        if (text.includes(value)) {
+            service.style.display = "";
+            found++;
+        } else {
+            service.style.display = "none";
+        }
+
+    });
+
+
+    if (value.length > 0) {
+        clearSearch.classList.add("show");
+        catalog.classList.add("open");
+    } else {
+        clearSearch.classList.remove("show");
+    }
+
+
+    if (found === 0 && value.length > 0) {
+        emptySearch.classList.add("show");
+    } else {
+        emptySearch.classList.remove("show");
+    }
+
+});
+
+
+clearSearch.addEventListener("click", function () {
+
+    searchInput.value = "";
+
+    clearSearch.classList.remove("show");
+
+    emptySearch.classList.remove("show");
+
+    services.forEach(function (service) {
+        service.style.display = "";
+    });
+
+});
+
+
+/* МОБИЛЬНОЕ МЕНЮ */
+
+burger.addEventListener("click", function () {
+
+    mobileNav.classList.toggle("open");
+
+});
+
+
+/* ЗАКРЫТИЕ КАТАЛОГА ПРИ КЛИКЕ СНАРУЖИ */
+
+document.addEventListener("click", function (event) {
+
+    if (
+        catalog.classList.contains("open") &&
+        !catalog.contains(event.target) &&
+        !catalogButton.contains(event.target) &&
+        !searchInput.contains(event.target)
+    ) {
+        catalog.classList.remove("open");
+    }
+
+});
+
 </script>
+
+</body>
+</html>
