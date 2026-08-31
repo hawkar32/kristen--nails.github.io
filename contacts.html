@@ -1,55 +1,275 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Контакты</title>
-  <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Контакты — Маникюр Санкт-Петербург</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
 </head>
+
 <body>
 
-<div class="header">
-  <div class="container">
-    <div class="header-lin">
 
-      <div class="header-logo">
-        <img src="logo2.png" width="100">
-      </div>
-      <div class='header-logo'>
-                   
+<header class="header">
+
+    <div class="container">
+
+        <div class="header-main">
+
+            <a href="index.html" class="logo">
+                <img src="logo2.png" alt="Логотип">
+            </a>
+
+
+            <nav class="nav">
+
+                <a href="index.html">
+                    Главная
+                </a>
+
+                <a href="prof.html">
+                    О мастере
+                </a>
+
+                <a href="contacts.html">
+                    Контакты
+                </a>
+
+            </nav>
+
+
+            <div class="socials">
+
+                <a href="https://t.me/knailss" target="_blank">
+                    TG
+                </a>
+
             </div>
-      
 
-      <div class="nav">
-        <a class="nav-item" href="index.html">ГЛАВНАЯ</a>
-        <a class="nav-item" href="reviews.html">ОТЗЫВЫ</a>
-        <a class="nav-item" href="contacts.html">КОНТАКТЫ</a>
-      </div>
-      
+
+            <button class="burger" id="burger">
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+
+        <nav class="mobile-nav" id="mobileNav">
+
+            <a href="index.html">
+                Главная
+            </a>
+
+            <a href="prof.html">
+                О мастере
+            </a>
+
+            <a href="contacts.html">
+                Контакты
+            </a>
+
+            <a href="https://t.me/knailss" target="_blank">
+                Записаться
+            </a>
+
+        </nav>
 
     </div>
-  </div>
-  <div class="header-down">
+
+</header>
+
+
+<main>
+
+
+    <section class="intro">
+
+        <div class="container">
+
+            <div class="breadcrumbs">
+                Главная&nbsp;&nbsp; / &nbsp;&nbsp;Контакты
+            </div>
+
+
+            <div class="intro-copy">
+
+                <span class="eyebrow">
+                    КОНТАКТЫ
+                </span>
+
+                <h1>
+                    Буду рада<br>
+                    <em>встрече</em>
+                </h1>
+
+                <p>
+                    Здесь вы можете найти адрес,
+                    связаться со мной и записаться
+                    на маникюр.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="address-banner">
+
+        <div class="container">
+
+            <div class="address-inner">
+
+                <div class="address-symbol">
+                    ⌖
+                </div>
+
+                <div>
+
+                    <span class="section-label">
+                        АДРЕС
+                    </span>
+
+                    <h2>
+                        Малая Бухарестская, 10к1
+                    </h2>
+
+                    <p>
+                        Санкт-Петербург
+                    </p>
+
+                </div>
+
+                <a
+                    href="https://yandex.ru/maps/?ll=30.4016%2C59.8616&z=17&text=Малая%20Бухарестская%2010к1"
+                    target="_blank"
+                >
+                    Открыть карту →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="consultation">
+
+        <div class="container">
+
+            <div class="consultation-inner">
+
+                <div>
+
+                    <span class="section-label">
+                        СВЯЗЬ
+                    </span>
+
+                    <h2>
+                        Как со мной связаться
+                    </h2>
+
+                    <p>
+                        Телефон:
+                        +7 (969) 207-03-60
+                    </p>
+
+                    <p>
+                        Telegram:
+                        @knailss
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="https://t.me/knailss"
+                    target="_blank"
+                >
+                    Написать в Telegram
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="master">
+
+        <div class="container">
+
+            <span class="section-label">
+                МЫ НА КАРТЕ
+            </span>
+
+
+            <h2 style="font-family: Georgia, serif; font-size: 46px; font-weight: 400; margin-bottom: 35px;">
+                Как нас найти
+            </h2>
+
+
+            <iframe
+                src="https://yandex.ru/map-widget/v1/?ll=30.4016%2C59.8616&z=17&text=Малая%20Бухарестская%2010к1"
+                width="100%"
+                height="500"
+                frameborder="0"
+                title="Местоположение на карте"
+                style="border:0; border-radius:12px;"
+            >
+            </iframe>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<footer class="footer">
+
     <div class="container">
-      <div class="header-down-text">
-    <h1>Контакты</h1>
 
-    <p><strong>Телефон:</strong> +7 (969) 207-03-60</p>
-    <p><strong>Telegramm:</strong> @knailss</p>
-    <p><strong>Адрес: ул.Малая Бухаресткая, 10к1</strong> Санкт-Петербург</p>
+        <span>
+            © 2026 Маникюр Санкт-Петербург
+        </span>
 
-    <h2>Мы на карте:</h2>
-      </div>
+        <a href="index.html">
+            На главную
+        </a>
 
-    <iframe
-  src="https://yandex.ru/map-widget/v1/?ll=30.4016%2C59.8616&z=17&text=Малая%20Бухарестская%2010к1"
-  width="100%"
-  height="400"
-  frameborder="0"
-  title="Карта с местоположением">
-</iframe>
+    </div>
 
-  </div>
-  </div>
-</div>
+</footer>
+
+
+<script>
+
+const burger = document.getElementById("burger");
+const mobileNav = document.getElementById("mobileNav");
+
+burger.addEventListener("click", function () {
+    mobileNav.classList.toggle("open");
+});
+
+</script>
+
+
 </body>
 </html>
